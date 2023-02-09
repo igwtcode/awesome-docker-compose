@@ -54,12 +54,21 @@ docker-compose down
 redis server would be available at the following urls:
 
 - from host machine
-  ```
+
+  ```bash
   redis://<REDIS_USER>:<REDIS_PASS>@localhost:<REDIS_PORT>
+
+  # with default values
+  redis://redisUser:redisUserPassword@localhost:6379
   ```
+
 - inside docker network
-  ```
+
+  ```bash
   redis://<REDIS_USER>:<REDIS_PASS>@redis:<REDIS_PORT>
+
+  # with default values
+  redis://redisUser:redisUserPassword@redis:6379
   ```
 
 ## GUI Client
