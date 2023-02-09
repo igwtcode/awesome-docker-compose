@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  # redis server
+  redis:
+    image: redis:7.0.8
+    container_name: awesome-redis
+    restart: on-failure
+    entrypoint: /setup/start.sh
+    healthcheck:
+      test: bash -c /healthcheck.sh
+      interval: 6s
+      timeout: 3s
+      retries: 3
+    env_file:
+      - .env
+    ports:
+      - ${REDIS_PORT:-6379}:${REDIS_PORT:-6379}
+    volumes:
+      - ./data:/data
+      - ./setup:/setup
+
+  # redis insight (gui for redis)
+  redis-insight:
+    image: redislabs/redisinsight:latest
+    container_name: awesome-redis-insight
+    restart: on-failure
+    # environment:
+    # - RIAUTHPROMPT=1 # prompt for auth
+    # - RIAUTHTIMER=9 # auth time interval in seconds
+    healthcheck:
+      test: bash -c "curl -f http://localhost:8001/healthcheck/ || exit 1"
+      interval: 6s
+      timeout: 3s
+      retries: 3
+    ports:
+      - 8001:8001
+    depends_on:
+      redis:
+        condition: service_healthy

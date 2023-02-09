@@ -1,0 +1,4 @@
+port REDIS_PORT
+user default off
+user REDIS_HEALTHCHECK_USER on -@all +ping >REDIS_HEALTHCHECK_PASS
+user REDIS_USER on +@all ~* >REDIS_PASS
