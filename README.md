@@ -2,7 +2,7 @@
 
 docker and docker compose resources and guides useful for development
 
-## [Redis](redis/README.md)
+## [Redis](https://github.com/igwtcode/awesome-docker-compose/blob/main/redis)
 
 ### Description
 
@@ -17,4 +17,4 @@ simple redis setup based on the official image with custom configuration, health
 - multiple options for redis gui client
 - data persistence
 
-> (see **[Documentation and Guide](redis/README.md)**)
+> (see **[Documentation and Resources](https://github.com/igwtcode/awesome-docker-compose/blob/main/redis)**)
