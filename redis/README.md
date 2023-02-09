@@ -75,15 +75,17 @@ redis server would be available at the following urls:
 
 _redis insight_ is a GUI client for redis which can be used to connect to redis server and perform various operations.
 
-- use `redis-insight` docker service in `docker-compose.yml` file
+> **NOTE:** if you decide for option 2 or 3, then either remove or comment out the `redis-insight` service in `docker-compose.yml` file as in that case it would be of no use
+
+- **option 1:** use `redis-insight` docker service in `docker-compose.yml` file
 
   > web interface would be available at [`http://localhost:8001`](http://localhost:8001)
   >
   > **NOTE:** to authenticate in web interface, _the docker service name for redis server in `docker-compose.yml` file_ (here: **`redis`**), should be used as host name instead of `localhost`
 
-- download and install _redis insight_ desktop application from official website from [here](https://redislabs.com/redis-enterprise/redis-insight/) or [here](https://docs.redis.com/latest/ri/installing/install-redis-desktop/)
+- **option 2:** download and install _redis insight_ desktop application from official website from [here](https://redislabs.com/redis-enterprise/redis-insight/) or [here](https://docs.redis.com/latest/ri/installing/install-redis-desktop/)
 
-- install _redis insight_ desktop application via homebrew
+- **option 3:** install _redis insight_ desktop application via homebrew
 
 ```bash
 brew install --cask redisinsight
